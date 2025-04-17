@@ -12,7 +12,7 @@ function Header() {
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a className="resume-btn small" href="public/CV_Rachit(updated).pdf" download>
+        <a className="resume-btn small" href="/CV_Rachit_upddated.pdf" download>
           📄 Resume
         </a>
       </nav>
