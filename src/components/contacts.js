@@ -4,10 +4,10 @@ function Contact() {
     const [show, setShow] = useState(false);
 
     const copyEmail = () => {
-        const email = "your.email@example.com";
+        const email = "rachit.revalia@gmail.com";
         navigator.clipboard.writeText(email).then(() => {
             setShow(true);  // Show the feedback
-            setTimeout(() => setShow(false), 3000);  // Hide the feedback after 3 seconds
+            setTimeout(() => setShow(false), 3000);  
         });
     };
 
@@ -24,7 +24,7 @@ function Contact() {
                     <button className="copy-btn" onClick={copyEmail}>
                         Copy Email
                     </button>
-                    {show && <p>Email copied to clipboard!</p>}  {/* Conditional feedback */}
+                    {show && <p>Email copied to clipboard!</p>} 
                 </div>
 
                 <div className="contact-card">
