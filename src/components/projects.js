@@ -15,7 +15,7 @@ function Projects() {
                 </div>
                 <div class="prcard">
                     <img src="project2.jpg"  alt='project2'/>
-                    <h3>Flask Todo App</h3>
+                    <h3>Flask Todo App(Under Construction)</h3>
                     <p>Tech: Flask, SQLAlchemy, Bootstrap</p>
                     <p>Minimalistic todo app with filtering and Jinja templating.</p>
                 </div>
