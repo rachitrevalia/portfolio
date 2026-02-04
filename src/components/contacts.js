@@ -28,7 +28,7 @@ function Contact() {
                 </div>
 
                 <div className="contact-card">
-                    <a href="https://github.com/rachitrevalia" rel="noopener noreferrer" className="contact-link">
+                    <a href="https://github.com/rachitrevalia" rel="noopener noreferrer" className="contact-link" target='_blank'>
                         <img src={`${process.env.PUBLIC_URL}/github-mark-white.png`} alt='github' className="contact-icon"/>
                         <h3>GitHub</h3>
                         <p>https://github.com/rachitrevalia</p>
@@ -36,7 +36,7 @@ function Contact() {
                 </div>
 
                 <div className="contact-card">
-                    <a href="https://linkedin.com/in/rachitrevalia" rel="noopener noreferrer" className="contact-link">
+                    <a href="https://linkedin.com/in/rachitrevalia" rel="noopener noreferrer" className="contact-link" target='_blank'>
                         <img src={`${process.env.PUBLIC_URL}/linkedin-svgrepo-com.svg`} alt='linkedin'  className="contact-icon"/>
                         <h3>LinkedIn</h3>
                         <p>linkedin.com/in/rachitrevalia</p>
@@ -44,7 +44,7 @@ function Contact() {
                 </div>
 
                 <div className="contact-card">
-                    <a href="https://instagram.com/rachit_revalia" rel="noopener noreferrer" className="contact-link">
+                    <a href="https://instagram.com/rachit_revalia" rel="noopener noreferrer" className="contact-link" target='_blank'>
                         <img src={`${process.env.PUBLIC_URL}/instagram-svgrepo-com.svg`} alt='instagram' className="contact-icon"/>
                         <h3>Instagram</h3>
                         <p>@rachit_revalia</p>
