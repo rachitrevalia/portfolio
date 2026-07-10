@@ -68,8 +68,8 @@ function Header() {
         <a href="#projects" onClick={closeMenu}>Projects</a>
         <a href="#contact" onClick={closeMenu}>Contact</a>
         <a 
-          href={`${process.env.PUBLIC_URL}/rachit_revalia_cv_2026.pdf`}
-          download="Rachit_Revalia_CV.pdf" 
+          href={`${process.env.PUBLIC_URL}/Rachit Revalia.pdf`}
+          download="Rachit Revalia.pdf" 
           className="resume-btn small"
           target="_blank"
           rel="noopener noreferrer"

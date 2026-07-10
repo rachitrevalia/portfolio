@@ -19,9 +19,42 @@ function Projects() {
   const projectsData = [
     {
       id: 1,
-      title: "Breda Guardians Esports Tool",
+      title: "PlaySmart – Esports Coaching Analytics Platform",
+      tech: "FastAPI, React, TypeScript, Electron, Python, SQLite, YOLOv11, Whisper, Bleak (BLE), Pandas, Poetry",
+      shortDesc: "Multimodal esports coaching intelligence system with AI inference, biometric sensors, and real-time dashboards.",
+      images: [
+        `${process.env.PUBLIC_URL}/playometer1.png`,
+        `${process.env.PUBLIC_URL}/playometer8.png`,
+        `${process.env.PUBLIC_URL}/playometer9.png`,
+        `${process.env.PUBLIC_URL}/playometer10.png`,
+        `${process.env.PUBLIC_URL}/playometer11.png`,
+      ],
+      github: null,
+      linkedin: "https://www.linkedin.com/posts/rachitrevalia_datascience-artificialintelligence-esportsanalytics-share-7479804214815129603-VnBH/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQK2x8BiZl14_lj5TqZPOllGkeYYDSYorw",
+      isUniversityProject: true,
+      purpose: "PlaySmart (formerly B.G.E.T.) is a multimodal esports coaching analytics platform built across two semesters at Breda University of Applied Sciences, in collaboration with the Breda Guardians esports organisation. The platform captures and correlates multiple player data streams — gameplay video, physiological signals (EDA via wearable rings), eye-tracking, facial emotion recognition, and keyboard/mouse telemetry — and surfaces them through coach and player dashboards. The goal is to help coaches make faster, more informed decisions by giving them both performance metrics and insight into the player's cognitive and emotional state during critical in-game moments. The platform supports Valorant and League of Legends and won three awards at the BUas end-of-semester showcase: Best Business Value, Most Innovative Project, and Best Project Overall (runner-up).",
+      features: [
+        "YOLOv11-based reaction time detection model — GPU-accelerated with batch inference, reducing processing from 2–3 hours to ~42 minutes per session",
+        "Nuanic BLE wearable ring integration for real-time EDA (electrodermal activity) data collection via Bluetooth Low Energy",
+        "Audio transcription pipeline using OpenAI Whisper with ffmpeg chunking and overlap for full session transcripts",
+        "IGN mapping system (per-PC JSON files merged server-side) to reliably identify players across multiple machines",
+        "Server-side pandas analytics with caching for match statistics, error pattern detection, and performance trends",
+        "Error Patterns coaching dashboard page surfacing recurring mistake patterns per player",
+        "Video Feedback Review dashboard with emotion overlays, reaction time markers, and interactive timeline",
+        "Match Feedback dashboard aggregating gaze, input telemetry, emotion, and performance data across modalities",
+        "Role-based dashboards for coaches and players with different access levels and views",
+        "Hive SFTP server integration for both Valorant and League of Legends session data",
+        "Tobii Eye Tracker integration for gaze and attention heatmap data",
+        "JWT authentication with secure session management",
+        "Sphinx documentation, APPLICATION_SETUP.md, and full code handoff for incoming development teams"
+      ],
+      techDetails: "Full-stack architecture with a FastAPI backend (Python, Poetry) and a React/TypeScript frontend packaged as an Electron desktop application. The AI inference pipeline runs YOLOv11 models on an RTX 3070 GPU server (Hive), with ONNX export and batched frame inference for performance. BLE communication with Nuanic rings is handled via the Bleak library, using device-object-based connection to bypass Resolvable Private Address rotation on Windows. Audio transcription uses ffmpeg to chunk session recordings before passing them to Whisper for overlap-aware transcription. Session data from multiple PCs is merged server-side via paramiko SFTP. The backend serves pandas-powered analytics with response caching to reduce repeated computation. The frontend is modular with separate coach and player interfaces, shared component library, and React Router for navigation."
+    },
+    {
+      id: 2,
+      title: "Breda Guardians Esports Tool (B.G.E.T.)",
       tech: "FastAPI, React, TypeScript, Electron, Poetry, PostgreSQL",
-      shortDesc: "Esports analytics platform with biometric integration and real-time dashboards.",
+      shortDesc: "Esports analytics platform with biometric integration and real-time dashboards — the first semester foundation of PlaySmart.",
       images: [
         `${process.env.PUBLIC_URL}/playometer1.png`,
         `${process.env.PUBLIC_URL}/playometer2.png`,
@@ -34,7 +67,7 @@ function Projects() {
       github: null,
       linkedin: "https://www.linkedin.com/posts/rachitrevalia_datascience-artificialintelligence-esportsanalytics-activity-7420833636448366592-6jz2?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEQK2x8BiZl14_lj5TqZPOllGkeYYDSYorw",
       isUniversityProject: true,
-      purpose: "A comprehensive esports analytics platform built as an 18-week capstone project at BUAS (Breda University of Applied Sciences) in collaboration with real-world client Breda Guardians esports team. Designed to enhance competitive performance through data-driven insights by integrating biometric sensors with gameplay data, providing coaches and players with actionable intelligence for improving in-game decision-making and overall performance across Valorant and League of Legends.",
+      purpose: "The original 18-week capstone project at Breda University of Applied Sciences, built in collaboration with the Breda Guardians esports team. As a Data Engineer, I designed and built the core data pipelines, application architecture, and system integration layer that became the foundation for PlaySmart in semester two. The platform integrates game telemetry, physiological data, and AI-powered performance metrics to help coaches analyse matches faster and make more informed training decisions across Valorant and League of Legends.",
       features: [
         "Real-time biometric data integration with Tobii Eye Tracker for gaze analysis",
         "Role-based dashboards tailored for coaches and players with different access levels",
@@ -43,16 +76,16 @@ function Projects() {
         "Timestamp-based correlation system matching local recordings with online match events",
         "JWT authentication system with secure session management",
         "Champion/agent matchup analysis with historical performance metrics",
-        "Desktop and an android application built with Electron for cross-platform compatibility",
-        "Production deployment on BUAS Hive server with SSH/SFTP configuration",
+        "Desktop and Android application built with Electron for cross-platform compatibility",
+        "Production deployment on BUas Hive server with SSH/SFTP configuration",
         "Machine learning models for reaction time analysis and map awareness detection",
         "AI-powered inference pipeline on dedicated server for YOLO-based computer vision tasks",
         "Automated video annotation system generating metrics CSV reports from gameplay footage"
       ],
-      techDetails: "Built with a modern full-stack architecture featuring FastAPI backend with Poetry dependency management and PostgreSQL database. Frontend developed in React with TypeScript for type safety, packaged as an Electron desktop application. Implements RESTful API design with rate limiting for external API calls. Backend handles complex data pipelines processing biometric CSV data, eye-tracking information, and gameplay statistics. Uses SSH/SFTP for secure server deployment and file management. The application architecture separates concerns with modular components, reusable utilities, and a clean separation between coach and player interfaces. Data synchronization achieved through sophisticated timestamp matching algorithms correlating multiple data streams from different sources. Additionally implements a machine learning pipeline with custom-trained YOLO models deployed on a separate AI server for reaction time analysis (measuring player response latency to enemy encounters in Valorant) and map awareness detection (analyzing minimap attention patterns). The ML inference system accepts gameplay videos and merged CSV data, processes them through computer vision models, and returns annotated videos with overlays plus detailed metrics reports for coach analysis."
+      techDetails: "Built with a modern full-stack architecture featuring FastAPI backend with Poetry dependency management and PostgreSQL database. Frontend developed in React with TypeScript for type safety, packaged as an Electron desktop application. Implements RESTful API design with rate limiting for external API calls. Backend handles complex data pipelines processing biometric CSV data, eye-tracking information, and gameplay statistics. Uses SSH/SFTP for secure server deployment and file management. Data synchronization achieved through timestamp matching algorithms correlating multiple data streams from different sources. Includes a machine learning pipeline with custom-trained YOLO models deployed on a separate AI server for reaction time analysis and map awareness detection."
     },
     {
-      id: 2,
+      id: 3,
       title: "Task Manager Dashboard",
       tech: "Django, Python, JavaScript, CSS, SQLite",
       shortDesc: "Full-stack dashboard with login, deadlines, and task delegation.",
@@ -71,29 +104,10 @@ function Projects() {
         "Deadline tracking to ensure timely task completion",
         "Responsive card-based UI for optimal viewing across devices"
       ],
-      techDetails: "Built using Django's MTV (Model-Template-View) architecture with a SQLite database for efficient data persistence. The authentication system leverages Django's built-in user management for secure session handling. Frontend utilizes Django's template engine with Jinja2 syntax, Bootstrap 5 for responsive design, and vanilla JavaScript for dynamic interactions. The application implements CRUD (Create, Read, Update, Delete) operations through Django's ORM, ensuring clean separation of concerns and maintainable code structure."
+      techDetails: "Built using Django's MTV (Model-Template-View) architecture with a SQLite database for efficient data persistence. The authentication system leverages Django's built-in user management for secure session handling. Frontend utilizes Django's template engine with Jinja2 syntax, Bootstrap 5 for responsive design, and vanilla JavaScript for dynamic interactions. The application implements CRUD operations through Django's ORM, ensuring clean separation of concerns and maintainable code structure."
     },
     {
-      id: 3,
-      title: "Flask Todo App",
-      tech: "Flask, SQLAlchemy, Bootstrap",
-      shortDesc: "Minimalistic todo app with filtering and Jinja templating.",
-      images: [
-        `${process.env.PUBLIC_URL}/project2.png`,
-      ],
-      github: null,
-      purpose: "A lightweight task tracking application focusing on simplicity and ease of use for personal productivity.",
-      features: [
-        "Create, read, update, and delete todos",
-        "Filter tasks by status (completed/pending)",
-        "Clean and minimal UI using Bootstrap",
-        "Jinja2 templating for dynamic content",
-        "SQLAlchemy ORM for database operations"
-      ],
-      techDetails: "Lightweight Flask application using SQLAlchemy for database abstraction. Bootstrap provides responsive styling while Jinja2 handles server-side rendering."
-    },
-    {
-      id: 4,
+      id: 5,
       title: "Library Management System",
       tech: "Python, SQLite",
       shortDesc: "Terminal-based system for borrowing, returning, and reserving books.",
@@ -110,6 +124,23 @@ function Projects() {
         "Search and filter books by various criteria"
       ],
       techDetails: "Pure Python application using SQLite for data storage. Implements object-oriented design patterns and uses SQL queries for data manipulation."
+    },
+    {
+      id: 6,
+      title: "Personal Portfolio Website",
+      tech: "React, JavaScript, CSS",
+      shortDesc: "Responsive developer portfolio with horizontal project gallery, modal overlays, and typewriter animation.",
+      images: [`${process.env.PUBLIC_URL}/portfolio.png`],
+      github: "https://github.com/rachitrevalia/portfolio",
+      purpose: "Built to showcase my projects and technical background to recruiters and collaborators. Designed and developed from scratch with a focus on clean UI and smooth user experience.",
+      features: [
+        "Horizontal scrollable project gallery with modal detail views",
+        "Typewriter animation cycling through role titles",
+        "Responsive design across desktop and mobile",
+        "Fade-in scroll animations",
+        "Direct links to GitHub, LinkedIn, and project demos"
+      ],
+      techDetails: "Single-page React application with component-based architecture, CSS animations, and React hooks for state management. Deployed on Vercel."
     }
   ];
 
@@ -143,12 +174,12 @@ function Projects() {
           <button className="scroll-btn scroll-left" onClick={() => scroll('left')}>
             ‹
           </button>
-          
+
           <div className="projects-scroll-container" ref={scrollContainerRef}>
             <div className="projects-horizontal">
               {projectsData.map((project) => (
-                <div 
-                  key={project.id} 
+                <div
+                  key={project.id}
                   className="prcard"
                   onClick={() => openModal(project)}
                 >
@@ -172,7 +203,7 @@ function Projects() {
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>×</button>
-            
+
             <div className="modal-body">
               <div className="modal-image-section">
                 <div className="image-gallery">
@@ -181,25 +212,25 @@ function Projects() {
                       ‹
                     </button>
                   )}
-                  
-                  <img 
-                    src={selectedProject.images[currentImageIndex]} 
+
+                  <img
+                    src={selectedProject.images[currentImageIndex]}
                     alt={`${selectedProject.title} interface preview ${currentImageIndex + 1}`}
                     className="modal-image"
                   />
-                  
+
                   {selectedProject.images.length > 1 && currentImageIndex < selectedProject.images.length - 1 && (
                     <button className="image-nav-btn next-btn" onClick={nextImage}>
                       ›
                     </button>
                   )}
                 </div>
-                
+
                 {selectedProject.images.length > 1 && (
                   <div className="image-indicators">
                     {selectedProject.images.map((_, index) => (
-                      <span 
-                        key={index} 
+                      <span
+                        key={index}
                         className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
                         onClick={() => setCurrentImageIndex(index)}
                       />
@@ -234,22 +265,22 @@ function Projects() {
                 {selectedProject.isUniversityProject && (
                   <div className="school-project-note">
                     <p>
-  <strong>Note:</strong> This was a university capstone project developed for real clients and stakeholders. 
-  The repository is hosted on the university's private GitLab instance and is not publicly accessible.
-  But you can check the research website which explains more about the project. 
-  <br></br>
-  <a href="https://research-website-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">
-    https://research-website-sigma.vercel.app/
-  </a>
-</p>
+                      <strong>Note:</strong> This was a university capstone project developed for real clients and stakeholders.
+                      The repository is hosted on the university's private GitLab instance and is not publicly accessible.
+                      But you can check the research website which explains more about the project.{' '}
+                      <br />
+                      <a href="https://research-website-sigma.vercel.app/" target="_blank" rel="noopener noreferrer">
+                        https://research-website-sigma.vercel.app/
+                      </a>
+                    </p>
                   </div>
                 )}
 
                 <div className="project-links">
                   {selectedProject.github && (
-                    <a 
-                      href={selectedProject.github} 
-                      target="_blank" 
+                    <a
+                      href={selectedProject.github}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="project-link-btn github-link"
                     >
@@ -257,9 +288,9 @@ function Projects() {
                     </a>
                   )}
                   {selectedProject.linkedin && (
-                    <a 
-                      href={selectedProject.linkedin} 
-                      target="_blank" 
+                    <a
+                      href={selectedProject.linkedin}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="project-link-btn linkedin-link"
                     >
@@ -612,10 +643,6 @@ function Projects() {
           left: 0;
           color: #00796B;
           font-weight: bold;
-        }
-
-        .github-link:hover {
-          background: #005f56;
         }
 
         .school-project-note {
