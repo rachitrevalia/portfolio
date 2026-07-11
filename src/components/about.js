@@ -21,14 +21,12 @@ function About() {
           ? currentPhrase.substring(0, prev.length - 1)
           : currentPhrase.substring(0, prev.length + 1)
       );
-
       setTypingSpeed(isDeleting ? 50 : 100);
-
       if (!isDeleting && text === currentPhrase) {
         setTimeout(() => setIsDeleting(true), 500);
       } else if (isDeleting && text === '') {
         setIsDeleting(false);
-        setLoopNum((prevLoopNum) => prevLoopNum + 1);
+        setLoopNum((prev) => prev + 1);
       }
     };
 
@@ -40,7 +38,7 @@ function About() {
     <section id="about" className="fade-in about-section">
       <div className="about-content">
         <div className="about-text">
-          <h1>Hey there! 👋</h1>
+          <h1><span className="wave">👋</span> Hey there!</h1>
           <h2 className="typing-intro">
             I'm a <span className="typing-text">{text}</span>
             <span className="cursor">|</span>
@@ -49,22 +47,29 @@ function About() {
             Full-stack developer and data engineer currently pursuing my degree in
             Information and Communication Technology with a focus on Applied Data Sciences
             and Artificial Intelligence. My work combines backend development, data processing,
-            and modern web technologies to build functional applications. I build systems that turn complex, multi-source data into decisions people actually use.
+            and modern web technologies to build functional applications. I build systems that turn
+            complex, multi-source data into decisions people actually use.
           </p>
           <p>
-            I work primarily with Python (FastAPI, Django, Flask), PostgreSQL,
+            I work primarily with Python (FastAPI, Django, Flask), SQL,
             and React/TypeScript, with hands-on experience across the full stack —
             from ETL pipeline design and machine learning model deployment to
-            frontend dashboards and Linux server operations. I've also trained AI language models,
-             focusing on code quality and human-like explanations.
+            frontend dashboards and Linux server operations. Most recently I worked on
+            AI inference optimisation and biometric data integration for a real-world
+            esports coaching platform.
           </p>
           <p>
             Currently expanding my knowledge in data engineering, API development, and exploring
             modern technologies. I care about building things that work in the real world, not just in demos.
           </p>
         </div>
+
         <div className="about-photo">
-          <img src={`${process.env.PUBLIC_URL}/pfp.jpeg`} alt="Rachit Revalia" />
+          <div className="photo-ring">
+            <div className="photo-inner">
+              <img src={`${process.env.PUBLIC_URL}/pfp.jpeg`} alt="Rachit Revalia" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
