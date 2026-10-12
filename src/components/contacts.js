@@ -42,14 +42,6 @@ function Contact() {
                         <p>linkedin.com/in/rachitrevalia</p>
                     </a>
                 </div>
-
-                <div className="contact-card">
-                    <a href="https://instagram.com/rachit_revalia" rel="noopener noreferrer" className="contact-link" target='_blank'>
-                        <img src={`${process.env.PUBLIC_URL}/instagram-svgrepo-com.svg`} alt='instagram' className="contact-icon"/>
-                        <h3>Instagram</h3>
-                        <p>@rachit_revalia</p>
-                    </a>
-                </div>
             </div>
         </section>
     );

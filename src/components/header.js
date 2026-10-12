@@ -26,7 +26,7 @@ function Header({ toggleTheme, isDark }) {
         <a href="#projects" onClick={closeMenu}>Projects</a>
         <a href="#contact" onClick={closeMenu}>Contact</a>
         <a
-          href={`${process.env.PUBLIC_URL}/Rachit Revalia.pdf`}
+          href={`${process.env.PUBLIC_URL}/Rachit_Revalia_Resume.pdf`}
           download="Rachit Revalia.pdf"
           className="resume-btn small"
           target="_blank"

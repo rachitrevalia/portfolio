@@ -23,6 +23,7 @@ function Projects() {
       tech: "FastAPI, React, TypeScript, Electron, Python, SQLite, YOLOv11, Whisper, Bleak (BLE), Pandas, Poetry",
       shortDesc: "Multimodal esports coaching intelligence system with AI inference, biometric sensors, and real-time dashboards.",
       images: [
+        `${process.env.PUBLIC_URL}/playsmart.png`,
         `${process.env.PUBLIC_URL}/playometer1.png`,
         `${process.env.PUBLIC_URL}/playometer8.png`,
         `${process.env.PUBLIC_URL}/playometer9.png`,
@@ -86,10 +87,31 @@ function Projects() {
     },
     {
       id: 3,
+      title: "Computer-Use Automation System",
+      tech: "Python, Playwright, Flask, Pydantic, Gemini API",
+      shortDesc: "LLM agent that learns to operate real web UIs, then replays successful runs deterministically with zero LLM calls.",
+      images: [
+        `${process.env.PUBLIC_URL}/computer-use.png`,
+      ],
+      github: "https://github.com/rachitrevalia/computer-use-automation-system",
+      purpose: "A solo project, originally built as a take-home assignment, exploring how to automate tasks in web applications that expose no API. An LLM discovers how to complete a task in a real browser UI, and each successful run is captured as a typed, versioned, reusable capability artifact. Later executions replay that capability with zero LLM calls, combining the flexibility of agentic AI with the reliability and cost profile of deterministic execution.",
+      features: [
+      "LLM-driven agent that discovers how to complete tasks in real browser UIs with no API access",
+      "Successful runs captured as typed, versioned capability artifacts",
+      "Deterministic replay of capabilities with zero LLM calls",
+      "Pydantic schemas for typed inputs, outputs, and artifact validation",
+      "Playwright-driven browser control",
+      "README and REPORT.md design write-up documenting the architecture and trade-offs"
+    ],
+    techDetails: "Built in Python with Playwright for browser control, Flask for the service layer, Pydantic for typed, validated capability artifacts, and the Gemini API as the discovery model. The key design choice is separating discovery (non-deterministic, LLM-driven) from execution (deterministic, replayed from stored artifacts), so the LLM cost is paid once per capability instead of once per run."
+  },
+    {
+      id: 4,
       title: "Task Manager Dashboard",
       tech: "Django, Python, JavaScript, CSS, SQLite",
       shortDesc: "Full-stack dashboard with login, deadlines, and task delegation.",
       images: [
+        `${process.env.PUBLIC_URL}/library-management.png`,
         `${process.env.PUBLIC_URL}/project1.png`,
       ],
       github: "https://github.com/rachitrevalia/django-project",

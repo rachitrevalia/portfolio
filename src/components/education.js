@@ -36,7 +36,7 @@ function Education() {
           <span className="education-location">📍 Jyväskylä, Finland</span>
         </div>
         <p className="education-degree">Bachelor of Engineering in Information and Communication Technology</p>
-        <span className="education-year">2023 - 2027</span>
+        <span className="education-year">2023 - Present</span>
       </div>
 
       <div className="card">
