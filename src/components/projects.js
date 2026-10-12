@@ -111,7 +111,6 @@ function Projects() {
       tech: "Django, Python, JavaScript, CSS, SQLite",
       shortDesc: "Full-stack dashboard with login, deadlines, and task delegation.",
       images: [
-        `${process.env.PUBLIC_URL}/library-management.png`,
         `${process.env.PUBLIC_URL}/project1.png`,
       ],
       github: "https://github.com/rachitrevalia/django-project",
@@ -134,6 +133,7 @@ function Projects() {
       tech: "Python, SQLite",
       shortDesc: "Terminal-based system for borrowing, returning, and reserving books.",
       images: [
+        `${process.env.PUBLIC_URL}/library-management.png`,
         `${process.env.PUBLIC_URL}/project3.png`,
       ],
       github: "https://github.com/rachitrevalia/library_management_system",
